@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
-Route::get('/', function () {
-    return redirect()->route("admin.clientes");
-});
+Route::resource('produtos', ProdutoController::class);
+
+/*
 
 Route::group([
     'prefix' => 'admin',
@@ -22,8 +23,6 @@ Route::group([
         return "clientes";
     })->name('clientes');
 });
-
-/*
 
 Route::any('/any', function() {
     return "Permite todo tipo de acesso http (put, delete, get, post)";
