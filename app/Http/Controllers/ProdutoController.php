@@ -19,9 +19,10 @@ class ProdutoController extends Controller
         // return dd($produtos);
         $nome = "rodrigo";
         $idade = 28;
+        $frutas = [];
         $html = "<h1> Olá eu sou H1 </h1>";
 
-        return view('site/home', compact('nome', 'idade', 'html'));
+        return view('site/home', compact('nome', 'idade', 'html', 'frutas'));
     }
 
     /**
