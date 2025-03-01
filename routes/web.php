@@ -19,6 +19,10 @@ Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name(
 
 Route::post('/remover', [CarrinhoController::class, 'removeCarrinho'])->name('site/removecarrinho');
 
+Route::post('/atualizar', [CarrinhoController::class, 'atualizaCarrinho'])->name('site/atualizacarrinho');
+
+Route::get('/limpar', [CarrinhoController::class, 'limparCarrinho'])->name('site/limparcarrinho');
+
 /*
 
 Route::group([
