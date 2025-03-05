@@ -13,5 +13,7 @@
 
     Email: <br> <input name="email">
     Senha: <br> <input type="password" name="password">
+    <input type="checkbox" name="remember"> Lembrar-me
+
     <button type="submit">Entrar</button>
 </form>
