@@ -27,9 +27,16 @@ class SiteController extends Controller
     {
         $produto = Produto::where('slug', $slug)->first();
 
-        Gate::authorize('ver-produto', $produto);
+        // Gate::authorize('ver-produto', $produto);
+        // $this->authorize('verProduto', $produto);
 
-        return view('site/details', compact('produto'));
+        if (Gate::allows('ver-produto', $produto)) {
+            return view('site/details', compact('produto'));
+        }
+
+        if (Gate::denies('ver-produto', $produto)) {
+            return redirect()->route('site/index');
+        }
     }
 
     public function categoria($id)
